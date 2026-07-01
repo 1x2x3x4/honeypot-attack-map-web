@@ -1,0 +1,59 @@
+# Frontend repository ignore rules
+
+# Dependencies
+node_modules/
+.pnpm-store/
+
+# Build output
+dist/
+dist-ssr/
+coverage/
+playwright-report/
+test-results/
+
+# Local environment
+.env
+.env.*
+!.env.example
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Vite / Vue / TypeScript cache
+.vite/
+*.tsbuildinfo
+
+# Editor and OS files
+.idea/
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Runtime artifacts
+*.pid
+*.seed
+*.local
+
+# Split repositories: keep these out of the frontend upload
+backend/
+art-design-pro/
+
+# Local agent and full-stack launcher docs/scripts
+AGENTS.md
+start-dev.ps1
+src/test/startDevLauncher.spec.ts
+
+# Secrets and keys
+*.pem
+*.key
+*.crt
+id_rsa*
+id_ed25519*

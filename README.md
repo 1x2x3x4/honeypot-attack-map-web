@@ -45,6 +45,7 @@ VITE_MAP_TILE_ATTRIBUTION=
 npm install
 npm run dev
 npm run build
+npm run build:github-pages
 npm run preview
 npm run test:unit
 npm run test:e2e
@@ -80,3 +81,26 @@ Vite 生产构建会按职责拆分主要 chunk：
 - `echarts`
 - `http`
 - Attack Map 应用代码
+
+## GitHub Pages
+
+仓库已包含 GitHub Pages 自动部署工作流。推送到 `main` 后，GitHub Actions 会执行：
+
+```powershell
+npm ci
+npm run build:github-pages
+```
+
+部署地址：
+
+```text
+https://1x2x3x4.github.io/honeypot-attack-map-web/
+```
+
+GitHub Pages 只托管静态前端。真实数据接口需要部署在公网可访问的 HTTPS/WSS 后端，并在构建环境中配置：
+
+```env
+VITE_API_BASE_URL=https://your-api.example.com
+VITE_WS_URL=wss://your-api.example.com/ws/attacks
+VITE_ENABLE_WS=true
+```

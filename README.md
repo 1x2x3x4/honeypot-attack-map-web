@@ -84,11 +84,21 @@ Vite 生产构建会按职责拆分主要 chunk：
 
 ## GitHub Pages
 
-仓库已包含 GitHub Pages 自动部署工作流。推送到 `main` 后，GitHub Actions 会执行：
+仓库使用 GitHub Pages 的分支发布模式。更新页面时执行：
 
 ```powershell
 npm ci
-npm run build:github-pages
+npm run build:docs
+```
+
+然后提交并推送 `docs/` 目录。
+
+GitHub Pages 设置：
+
+```text
+Source: Deploy from a branch
+Branch: main
+Folder: /docs
 ```
 
 部署地址：
